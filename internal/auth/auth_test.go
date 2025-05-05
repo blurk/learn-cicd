@@ -39,7 +39,7 @@ func TestGetAPIKey(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			key, err := GetAPIKey(tc.headers)
 
-			if err == nil && !strings.Contains(err.Error(), tc.expectedErr.Error()) {
+			if err != nil && !strings.Contains(err.Error(), tc.expectedErr.Error()) {
 				t.Errorf("GetAPIKey() error mismatch (-got: %v +want: %v)\n", err.Error(), tc.expectedErr.Error())
 			}
 
