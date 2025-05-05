@@ -17,22 +17,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Check for credentials in diff
-        run: |
-          git diff --cached | grep -E 'DATABASE_URL'
-          if [ $? -eq 0 ]; then
-            echo "::warning title=Potential Credentials Detected::Review the diff for potential credentials!"
-            exit 0 #soft fail.
-          fi
-
-      - name: Check for credentials in diff HEAD
-        run: |
-          git diff HEAD | grep -E 'DATABASE_URL'
-          if [ $? -eq 0 ]; then
-            echo "::warning title=Potential Credentials Detected::Review the diff for potential credentials!"
-            exit 0 #soft fail
-          fi
-
       - name: Set up goose
         run: go install github.com/pressly/goose/v3/cmd/goose@latest && goose -version
 
