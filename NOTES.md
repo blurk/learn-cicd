@@ -20,3 +20,17 @@ In our case, the "Tests" job contains 3 steps:
 - Check out the code
 - Set up Go
 - Force failure of the CI job
+
+## Notables keyword
+- The `uses` key specifies the action to use
+- The `with` key specifies the inputs to the action.
+- The 'run' key refers to a custom command
+
+### A good CI pipeline typically includes:
+
+- Unit tests
+- Integration tests
+- Styling checks
+- Linting checks
+- Security checks
+- Any other kind of automated test
