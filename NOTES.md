@@ -44,3 +44,14 @@ code_coverage = (lines_covered / total_lines) * 100
 ```
 
 If you have 1000 lines of code in your project, and you have tests that cover the logic in 500 of those lines, then you have 50% code coverage.
+
+Regardless, the principle is the same everywhere. At its core, CI/CD enables us so that:
+
+- When PRs are opened, run static analysis and tests
+- When PRs are merged, build and deploy the app automatically
+
+## What Makes a “Good” CI/CD Pipeline?
+- Deterministic builds. The same code should always produce the same build.
+- Fast builds. The faster the better. This makes getting bug fixes and new features out to users faster.
+- Portable. This is why I love when the majority of a CI/CD pipeline is just bash scripts. It's easy to run locally, and it's easy to run on any CI/CD platform.
+- Fully automated. The fewer manual steps, the better. It's really annoying to manually run database migrations and click buttons. It's also error-prone.
