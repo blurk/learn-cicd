@@ -34,3 +34,13 @@ In our case, the "Tests" job contains 3 steps:
 - Linting checks
 - Security checks
 - Any other kind of automated test
+
+## Code Coverage
+
+Code coverage is a measure of how much of your code is being tested. It's a controversial metric, but I'll try to provide a balanced take... granted I'm not without my own biases.
+
+```python
+code_coverage = (lines_covered / total_lines) * 100
+```
+
+If you have 1000 lines of code in your project, and you have tests that cover the logic in 500 of those lines, then you have 50% code coverage.
