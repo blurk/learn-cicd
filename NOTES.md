@@ -55,3 +55,8 @@ Regardless, the principle is the same everywhere. At its core, CI/CD enables us 
 - Fast builds. The faster the better. This makes getting bug fixes and new features out to users faster.
 - Portable. This is why I love when the majority of a CI/CD pipeline is just bash scripts. It's easy to run locally, and it's easy to run on any CI/CD platform.
 - Fully automated. The fewer manual steps, the better. It's really annoying to manually run database migrations and click buttons. It's also error-prone.
+
+Recommend running DB migration after the Docker image is built, but before the deployment of the image. That accomplishes two things:
+
+1. We won't run the migration if there is a problem building the image.
+2. The migration will be live before the new code is deployed.
